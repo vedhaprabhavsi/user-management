@@ -1,0 +1,5 @@
+projectKey=com.cognizant:user-management
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/com.cognizant:user-management
+ceTaskId=AX0dRXCdCxG-8AVspNar
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AX0dRXCdCxG-8AVspNar

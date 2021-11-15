@@ -1,0 +1,10 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+user-management,com.cognizant.usermanagement.service,JwtFilterRequest,65,3,10,0,15,1,6,1,1,1
+user-management,com.cognizant.usermanagement.service,UserService,24,3,2,0,6,1,2,1,1,1
+user-management,com.cognizant.usermanagement.config,SecurityConfig,0,66,0,0,0,11,0,5,0,5
+user-management,com.cognizant.usermanagement,UserManagementApplication,5,3,0,0,2,1,1,1,1,1
+user-management,com.cognizant.usermanagement.utils,JwtUtils,92,3,4,0,14,1,10,1,8,1
+user-management,com.cognizant.usermanagement.controller,UserController,136,3,0,0,26,1,3,1,3,1
+user-management,com.cognizant.usermanagement.model,AuthenticationRequest,38,0,0,0,17,0,11,0,11,0
+user-management,com.cognizant.usermanagement.model,AuthenticationResponse,16,0,0,0,8,0,4,0,4,0
+user-management,com.cognizant.usermanagement.model,User,18,23,0,0,6,12,6,6,6,6

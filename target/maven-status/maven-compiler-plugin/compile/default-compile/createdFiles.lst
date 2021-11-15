@@ -1,0 +1,10 @@
+com\cognizant\usermanagement\config\SecurityConfig.class
+com\cognizant\usermanagement\controller\UserController.class
+com\cognizant\usermanagement\model\User.class
+com\cognizant\usermanagement\service\UserService.class
+com\cognizant\usermanagement\repository\UserRepository.class
+com\cognizant\usermanagement\UserManagementApplication.class
+com\cognizant\usermanagement\utils\JwtUtils.class
+com\cognizant\usermanagement\model\AuthenticationRequest.class
+com\cognizant\usermanagement\service\JwtFilterRequest.class
+com\cognizant\usermanagement\model\AuthenticationResponse.class
