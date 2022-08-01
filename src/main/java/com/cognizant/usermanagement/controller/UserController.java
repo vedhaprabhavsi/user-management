@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cognizant.usermanagement.model.AuthenticationRequest;
 import com.cognizant.usermanagement.model.AuthenticationResponse;
 import com.cognizant.usermanagement.model.User;
+import com.cognizant.usermanagement.model.UserLogin;
 import com.cognizant.usermanagement.repository.UserRepository;
 import com.cognizant.usermanagement.service.UserService;
 import com.cognizant.usermanagement.utils.JwtUtils;
@@ -47,8 +48,8 @@ public class UserController {
 	@Autowired
 	private JwtUtils jwtUtils;
 	
-//	@Autowired
-//	private PasswordEncoder encoder;
+	@Autowired
+	private PasswordEncoder encoder;
 	
 	@GetMapping("/test")
 	@ApiOperation(value = "Test Request", notes = "Header is not required", response = List.class)
@@ -62,18 +63,19 @@ public class UserController {
 		if(service.loadUserByUsername(req.getUsername())==null){
 			String username = req.getUsername();
 			String password = req.getPassword();
-			String fName = req.getfName();
-			String lName = req.getlName();
+			String fName = req.getFirstName();
+			String lName = req.getLastName();
 			Date dob = req.getDob();
 			User u = new User();
 			u.setUsername(username);
 			//u.setPassword(encodePassword(password));
-			u.setPassword(password);
-			u.setfName(fName);
-			u.setlName(lName);
+			u.setPassword(encoder.encode(password));
+			//u.setPassword(password);
+			u.setFirstName(fName);
+			u.setLastName(lName);
 			u.setDob(dob);
 			
-			System.out.println("User Object value is: "+u.getfName()+" "+u.getlName()+" "+u.getDob());
+			System.out.println("User Object value is: "+u.getFirstName()+" "+u.getLastName()+" "+u.getDob());
 			try{
 				repo.save(u);
 			}
@@ -91,7 +93,7 @@ public class UserController {
 	
 	@PostMapping("/login")
 	@ApiOperation(value = "User Login", notes = "Header is not required", response = List.class)
-	private ResponseEntity<?> login(@RequestBody AuthenticationRequest req) throws Exception{
+	private ResponseEntity<?> login(@RequestBody UserLogin req) throws Exception{
 		
 		String username = req.getUsername();
 		String password = req.getPassword();
@@ -99,7 +101,6 @@ public class UserController {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
 		}
 		catch(Exception e){
-			//throw new Exception("Error during Login for client: "+username);
 			return ResponseEntity.ok(new AuthenticationResponse("Error during Login for client: "+username));
 		}
 		

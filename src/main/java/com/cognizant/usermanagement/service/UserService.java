@@ -21,9 +21,8 @@ public class UserService implements UserDetailsService{
 
 		com.cognizant.usermanagement.model.User foundedUser = repo.findByUsername(username);
 		
-		if(foundedUser == null){
+		if(foundedUser == null)
 			return null;
-		}
 			
 		String uname = foundedUser.getUsername();
 		String pwd = foundedUser.getPassword();

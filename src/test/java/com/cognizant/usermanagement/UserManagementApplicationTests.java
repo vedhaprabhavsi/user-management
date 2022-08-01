@@ -41,8 +41,8 @@ public class UserManagementApplicationTests {
 		Date bDate = df.parse(dt1);
 		
 		User u = new User();
-		u.setfName("Revanth");
-		u.setlName("Kumar");
+		u.setFirstName("Revanth");
+		u.setLastName("Kumar");
 		u.setDob(bDate);
 		u.setUsername("abc@def.com");
 		u.setPassword("Abcde@1");

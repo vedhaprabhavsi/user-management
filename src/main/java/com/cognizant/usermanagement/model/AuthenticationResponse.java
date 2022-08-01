@@ -1,24 +1,13 @@
 package com.cognizant.usermanagement.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class AuthenticationResponse {
 	
 	private String response;
-
-	public AuthenticationResponse() {
-		super();
-	}
-
-	public AuthenticationResponse(String response) {
-		this.response = response;
-	}
-
-	public String getResponse() {
-		return response;
-	}
-
-	public void setResponse(String response) {
-		this.response = response;
-	}
-	
-
 }
